@@ -1,4 +1,5 @@
-import button from "../components/Button"
+import Button from "../components/Button"
+
 
 const SuperQuality = () => {
   return (
@@ -7,18 +8,24 @@ const SuperQuality = () => {
       max-container"
       >
         <div className="flex flex-1 flex-col">
-          <h2>We Provide You Super Quality Shoes</h2>
-          <p>Ensuring premium comfort and style, our meticulously 
+          <h2 className="text-4xl font-palanquin capitalize max-ld:max-w-lg
+           font-bold">We Provide You 
+           <span className="text-coral-red"> Super </span>
+           <span className="text-coral-red"> Quality </span> 
+           Shoes
+           </h2>
+          <p className="mt-4 lg:max-w-lg info-text">
+            Ensuring premium comfort and style, our meticulously 
             crafted footwear is designed to elevate your experience, 
             providing you with unmatched quality, innovation, and
              a touch of elegance.
           </p>
-          <p>
+          <p className="mt-6 lg:max-w-lg info-text">
             Our dedication to detail and excellence ensures your satisfaction.
           </p>
-          <button>
-            View details
-          </button>
+          <div className="mt-11">
+            <Button label="View details" />
+          </div>
         </div>
     </section>
   )
