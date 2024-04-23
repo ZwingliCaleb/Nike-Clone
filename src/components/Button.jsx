@@ -1,11 +1,15 @@
 //import 
 
-const button = ({label, iconURL}) => {
+const button = ({label, iconURL, backgroundColor, borderColor, textColor}) => {
   return (
-    <button className="flex justify-center font-montserrat 
+    <button className={`flex justify-center font-montserrat 
     gap-2 px-7 py-4 border items-center text-lg 
-    leading-none bg-coral-red rounded-full text-white 
-    border-coral-red">
+    leading-none
+    ${
+      backgroundColor
+       ? `${backgroundColor} ${textColor} ${borderColor}`
+      : "bg-coral-red rounded-full text-white border-coral-red"}
+      rounded-full w-full"}`}>
       {label}
       {iconURL && <img
         src={iconURL}

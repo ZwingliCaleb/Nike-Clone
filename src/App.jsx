@@ -17,7 +17,12 @@ const App = () => (
       <Services />
     </section>
     <section className = "padding">
-      <SpecialOffer />
+      <SpecialOffer
+        label='Learn more'
+        backgroundColor="bg-white"
+        borderColor="border-slate-gray"
+        textColor="text-slate-gray"
+      />
     </section>
     <section className = "bg-pale-blue padding">
       <CustomerReviews />
