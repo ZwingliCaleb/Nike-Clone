@@ -1,7 +1,7 @@
 const SpecialOffers = () => {
   return (
     <div>
-      
+      SpecialOffer
     </div>
   )
 }
