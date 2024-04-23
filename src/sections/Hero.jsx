@@ -3,8 +3,11 @@ import { arrowRight } from '../assets/icons';
 import { statistics, shoes } from '../constants';
 import { bigShoe1 } from '../assets/images';
 import ShoeCard from '../components/ShoeCard';
+import { useState } from "react";
 
 const Hero = () => {
+  const [bigShoeImg, setbigShoeImg] = useState(bigShoe1)
+
   return (
     <section id="home"
      className="w-full flex xl:flex-row 
@@ -46,7 +49,7 @@ const Hero = () => {
             items-center xl:min-h-screen max-xl py-40 bg-primary
             bg-cover bg-center bg-hero">
           <img 
-            src={bigShoe1}
+            src={bigShoeImg}
             alt="shoe collection"
             width="610"
             height="500"
@@ -58,8 +61,8 @@ const Hero = () => {
               <div key={shoe}>
                 <ShoeCard
                   imgURL={shoe}
-                  changeBigShoeImage={() => {}}
-                  bigShoeImg=""
+                  changeBigShoeImage={(shoe) => setbigShoeImg(shoe)}
+                  bigShoeImg={bigShoeImg}
                 />
               </div>
             ))}
