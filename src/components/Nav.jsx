@@ -1,8 +1,15 @@
 import { hamburger } from "../assets/icons";
 import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
+import { useState } from "react";
 
 const Nav = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen)
+  };
+
   return (
     <header className='padding-x py-8 absolute z-10 w-full'>
       <nav className='flex justify-between items-center max-container'>
@@ -32,8 +39,23 @@ const Nav = () => {
           <span>/</span>
           <a href='/'>Explore now</a>
         </div>
-        <div className='hidden max-lg:block'>
-          <img src={hamburger} alt='hamburger icon' width={25} height={25} />
+        <div className='hidden max-lg:block relative'>
+          <img src={hamburger} alt='hamburger icon' width={25} height={25} onClick={toggleMenu}/>
+          {isMenuOpen && (
+            <ul className="absolute top-full left-0 bg-white border border-gray-200 py-2 mt-1 rounded-md shadow-lg">
+              {navLinks.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+
+            </ul>
+          )}
         </div>
       </nav>
     </header>
