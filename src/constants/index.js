@@ -34,21 +34,29 @@ export const products = [
         imgURL: shoe4,
         name: "Nike Air Jordan-01",
         price: "$200.20",
+        description: "This is the best for though",
+        sizes: ["US 7", "US 8", "US 9", "US 10"],
     },
     {
         imgURL: shoe5,
         name: "Nike Air Jordan-10",
         price: "$210.20",
+        description: "Lorem Ipsum",
+        sizes: ["US 7", "US 8","US 9", "US 10"],
     },
     {
         imgURL: shoe6,
         name: "Nike Air Jordan-100",
         price: "$220.20",
+        description: "Best shoes",
+        sizes: ["US 9", "US 10", "US 11", "US 12"],
     },
     {
         imgURL: shoe7,
         name: "Nike Air Jordan-001",
         price: "$230.20",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        sizes: ["US 10", "US 11", "US 12", "US 13"],
     },
 ];
 
