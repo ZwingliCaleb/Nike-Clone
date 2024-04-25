@@ -1,5 +1,6 @@
 import Modal from './Modal';
 import { star } from '../assets/icons';
+import { product } from '../constants';
 
 const ProductModal = () => {
   return (
@@ -13,6 +14,14 @@ const ProductModal = () => {
           </div>
           <p className='text-lg mt-2'>{product.price}</p>
           <p className="text-gray-600 mt-2">{product.description}</p>
+          <div className="mt-4">
+            <p className="font-semibold">Sizes Available:</p>
+            <ul className="list-disc list-inside">
+              {product.sizes.map((size, index) => (
+                <li key={index}>{size}</li>
+              ))}
+            </ul>
+          </div>
       </div>
     </Modal>
   )
