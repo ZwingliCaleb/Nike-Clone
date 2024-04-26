@@ -52,4 +52,4 @@ For questions or feedback regarding the Nike Clone App, please contact Caleb Zwi
 
 ## Credits
 
-Special thanks to jsmastery and @adrianhajdin for the inspiration and guidance provided in building this project.
+Special thanks to jsmastery and @adrianhajdin - JS Mastery for the inspiration and guidance provided in building this project.
