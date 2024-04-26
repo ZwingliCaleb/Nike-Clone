@@ -61,8 +61,8 @@ const Nav = () => {
         <div className='hidden max-lg:block relative z-50'>
           <img src={hamburger} alt='hamburger icon' width={25} height={25} onClick={toggleMenu}/>
           {isMenuOpen && (
-            <ul className="absolute top-full right-0 border border-gray-300 py-6 mt-4
-             rounded-[10px] shadow-lg z-60 w-[160px] lg:w-[500px] bg-opacity-25 backdrop-filter backdrop-blur-3xl">
+            <ul className="absolute top-full right-0 border border-gray-300 py-6 mt-4 rounded-[10px] shadow-lg
+             z-60 w-[160px] lg:w-[240px] bg-opacity-25 backdrop-filter backdrop-blur-3xl">
               {navLinks.map((item) => (
                 <li key={item.label}>
                   <a

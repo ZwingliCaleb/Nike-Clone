@@ -34,21 +34,29 @@ export const products = [
         imgURL: shoe4,
         name: "Nike Air Jordan-01",
         price: "$200.20",
+        description: "Classic design meets modern comfort. Elevate your style with these iconic sneakers.",
+        sizes: ["US 7", "US 8", "US 9", "US 10"],
     },
     {
         imgURL: shoe5,
         name: "Nike Air Jordan-10",
         price: "$210.20",
+        description: "Bold and versatile, these sneakers are a must-have for any sneaker enthusiast.",
+        sizes: ["US 7", "US 8","US 9", "US 10"],
     },
     {
         imgURL: shoe6,
         name: "Nike Air Jordan-100",
         price: "$220.20",
+        description: "Experience ultimate performance and style with these sleek and dynamic sneakers.",
+        sizes: ["US 9", "US 10", "US 11", "US 12"],
     },
     {
         imgURL: shoe7,
         name: "Nike Air Jordan-001",
         price: "$230.20",
+        description: "Step up your game with these high-performance sneakers. Designed for style and functionality.",
+        sizes: ["US 10", "US 11", "US 12", "US 13"],
     },
 ];
 
