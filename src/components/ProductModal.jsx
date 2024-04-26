@@ -1,9 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Modal from './Modal';
 import { star } from '../assets/icons';
 
 const ProductModal = ({ product, onClose }) => {
   const modalRef = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showToggle, setShowToggle] = useState(false);
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -19,28 +21,49 @@ const ProductModal = ({ product, onClose }) => {
     };
   }, [onClose]);
 
+  useEffect(() => {
+    if (product.description.length > 100) {
+      setShowToggle(true);
+    } else {
+      setShowToggle(false);
+    }
+  }, [product.description]);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <Modal>
-      <div ref={modalRef} className="bg-white rounded-lg p-8 max-w-md max-h-full overflow-auto shadow-lg backdrop-filter backdrop-blur-sm">
+      <div ref={modalRef} className="bg-white rounded-[20px] p-8 shadow-lg backdrop-filter overflow-auto backdrop-blur-md max-w-[400px] max-h-[600px] md:max-w-md md:max-h-[60vh]">
         <img src={product.imgURL} alt={product.name} className="w-full rounded-lg" />
         <h2 className="text-2xl font-bold mt-4">{product.name}</h2>
         <div className="flex items-center mt-2">
           <img src={star} alt="rating" className="w-4 h-4 mr-1" />
-          <p className="text-gray-600">{product.rating}</p>
+          <p className="text-gray-600">(4.5)</p>
         </div>
-        <p className='text-lg mt-2'>{product.price}</p>
-        <p className="text-gray-600 mt-2">{product.description}</p>
+        <p className='text-lg mt-2 text-coral-red'>{product.price}</p>
+        <div className="mt-2">
+          <p className="font-montserrat text-sm">
+            {isExpanded ? product.description : product.description.slice(0, 100)}
+            {showToggle && (
+              <span className="text-coral-red cursor-pointer" onClick={toggleExpand}>
+                {isExpanded ? ' Show less' : ' Show more'}
+              </span>
+            )}
+          </p>
+        </div>
         <div className="mt-4">
           <p className="font-semibold">Sizes Available:</p>
-          <ul className="list-disc list-inside">
+          <div className="flex flex-wrap">
             {product.sizes.map((size, index) => (
-              <li key={index}>{size}</li>
+              <p key={index} className="italic mr-2 font-bold text-slate-gray">{size}{index !== product.sizes.length - 1 && ','}</p>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </Modal>
-  )
-}
+  );
+};
 
 export default ProductModal;
